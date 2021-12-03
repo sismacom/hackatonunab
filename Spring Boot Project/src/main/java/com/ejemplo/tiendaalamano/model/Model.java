@@ -4,22 +4,18 @@ import javax.persistence.Entity;
 
 @Entity
 public class Model extends EntidadBase {
-	private static final long serialVersionUID = -3904417485279370766L;
-
-
 
     private String name;
 
     public Model() {
-        
+
     }
 
     public Model(Long id, String name) {
-        
+
         this.setId(id);
         this.name = name;
     }
-
 
     public String getName() {
         return this.name;

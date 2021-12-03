@@ -5,7 +5,7 @@ import java.util.Optional;
 
 import com.ejemplo.tiendaalamano.model.Usuario;
 
-public interface UsuarioService {
+public interface IUsuarioService {
 	public List<Usuario> findAll();
 	public Optional<Usuario> findById(Long id);
 	public List<Usuario> login(String username, String password);

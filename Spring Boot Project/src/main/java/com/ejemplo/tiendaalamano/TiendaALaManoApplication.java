@@ -17,27 +17,27 @@ import com.ejemplo.tiendaalamano.config.JWTAuthorizationFilter;
 @SpringBootApplication
 public class TiendaALaManoApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(TiendaALaManoApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(TiendaALaManoApplication.class, args);
+    }
 
-	@EnableWebSecurity
-	@Configuration
-	class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+    @EnableWebSecurity
+    @Configuration
+    class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-		@Override
-		protected void configure(HttpSecurity http) throws Exception {
-			CorsConfiguration configuration = new CorsConfiguration();
-			configuration.setAllowedHeaders(Arrays.asList("Authorization", "Cache-Control", "Content-Type"));
-			configuration.setAllowedOrigins(Arrays.asList("*"));
-			configuration.setAllowedMethods(Arrays.asList("GET", "POST", "HEAD", "PUT", "DELETE"));
-			configuration.setAllowCredentials(true);
-			configuration.setExposedHeaders(Arrays.asList("Authorization"));
+        @Override
+        protected void configure(HttpSecurity http) throws Exception {
+            CorsConfiguration configuration = new CorsConfiguration();
+            configuration.setAllowedHeaders(Arrays.asList("Authorization", "Cache-Control", "Content-Type"));
+            configuration.setAllowedOrigins(Arrays.asList("*"));
+            configuration.setAllowedMethods(Arrays.asList("GET", "POST", "HEAD", "PUT", "DELETE"));
+            configuration.setAllowCredentials(true);
+            configuration.setExposedHeaders(Arrays.asList("Authorization"));
 
-			http.addFilterAfter(new JWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class)
-					.authorizeRequests().antMatchers(HttpMethod.GET, "/api/auth").permitAll().anyRequest()
-					.authenticated()
-					.and().csrf().disable().cors().configurationSource(request -> configuration);
-		}
-	}
+            http.addFilterAfter(new JWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class)
+                    .authorizeRequests().antMatchers(HttpMethod.GET, "/api/auth").permitAll().anyRequest()
+                    .authenticated()
+                    .and().csrf().disable().cors().configurationSource(request -> configuration);
+        }
+    }
 }

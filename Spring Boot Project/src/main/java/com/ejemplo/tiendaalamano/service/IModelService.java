@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.ejemplo.tiendaalamano.model.Model;
 
-public interface ModelService {
+public interface IModelService {
     void deleteAllModels();
     void deleteModelById(Long id);
 

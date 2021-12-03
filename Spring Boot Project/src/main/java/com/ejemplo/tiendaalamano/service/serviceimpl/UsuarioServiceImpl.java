@@ -1,4 +1,4 @@
-package com.ejemplo.tiendaalamano.service;
+package com.ejemplo.tiendaalamano.service.serviceimpl;
 
 import java.util.List;
 import java.util.Optional;
@@ -8,12 +8,13 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.ejemplo.tiendaalamano.model.Usuario;
-import com.ejemplo.tiendaalamano.repository.UsuarioRepository;
+import com.ejemplo.tiendaalamano.repository.IUsuarioRepository;
+import com.ejemplo.tiendaalamano.service.IUsuarioService;
 
 @Service
-public class UsuarioServiceImpl implements UsuarioService {
+public class UsuarioServiceImpl implements IUsuarioService {
 	@Autowired
-	private UsuarioRepository UsuarioRepository;
+	private IUsuarioRepository UsuarioRepository;
 
 	@Override
 	@Transactional(readOnly = true)

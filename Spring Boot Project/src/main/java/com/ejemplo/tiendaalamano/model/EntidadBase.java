@@ -17,6 +17,8 @@ import javax.persistence.MappedSuperclass;
  */
 @MappedSuperclass
 public class EntidadBase implements Serializable {
+    
+    private static final long serialVersionUID = -3904417485279370766L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

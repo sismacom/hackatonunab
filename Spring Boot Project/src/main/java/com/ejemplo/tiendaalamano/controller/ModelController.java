@@ -1,7 +1,6 @@
 package com.ejemplo.tiendaalamano.controller;
 
 import com.ejemplo.tiendaalamano.model.Model;
-import com.ejemplo.tiendaalamano.service.ModelService;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,12 +12,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import com.ejemplo.tiendaalamano.service.IModelService;
 
 @RestController
 @RequestMapping("/api")
 public class ModelController {
     @Autowired
-    private ModelService modelService;
+    private IModelService modelService;
 
     @RequestMapping(value = "/model", method = RequestMethod.POST, consumes = "application/json")
     @ResponseStatus(HttpStatus.CREATED)

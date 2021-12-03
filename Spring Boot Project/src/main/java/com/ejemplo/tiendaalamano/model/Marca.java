@@ -17,29 +17,20 @@ import javax.persistence.Table;
  * @author SISMACOM
  */
 @Entity
-@Table(name = "categorias")
-public class Categoria extends EntidadBase {
+@Table(name = "marcas")
+public class Marca extends EntidadBase {
 
-    private String nombre_categoria;
-    private String descripcion;
-
+    private String nombre_marca;
+    
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "categoria")
     private List<Producto> productos;
 
-    public String getNombre_categoria() {
-        return nombre_categoria;
+    public String getNombre_marca() {
+        return nombre_marca;
     }
 
-    public void setNombre_categoria(String nombre_categoria) {
-        this.nombre_categoria = nombre_categoria;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setNombre_marca(String nombre_marca) {
+        this.nombre_marca = nombre_marca;
     }
 
     public List<Producto> getProductos() {
@@ -52,7 +43,7 @@ public class Categoria extends EntidadBase {
 
     @Override
     public String toString() {
-        return this.nombre_categoria;
+        return this.nombre_marca;
     }
 
 }

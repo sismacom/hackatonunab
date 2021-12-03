@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import com.ejemplo.tiendaalamano.model.Model;
 
 @Repository("modelRepository")
-public interface ModelRepository extends JpaRepository<Model, Long> {
+public interface IModelRepository extends JpaRepository<Model, Long> {
     @Transactional
     void deleteById(Long id);
 }

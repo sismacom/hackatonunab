@@ -1,7 +1,6 @@
-package com.ejemplo.tiendaalamano.service;
+package com.ejemplo.tiendaalamano.service.serviceimpl;
 
 import com.ejemplo.tiendaalamano.model.Model;
-import com.ejemplo.tiendaalamano.repository.ModelRepository;
 import com.ejemplo.tiendaalamano.exception.BadResourceRequestException;
 import com.ejemplo.tiendaalamano.exception.NoSuchResourceFoundException;
 
@@ -10,11 +9,13 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.ejemplo.tiendaalamano.repository.IModelRepository;
+import com.ejemplo.tiendaalamano.service.IModelService;
 
 @Service("modelService")
-public class ModelServiceImpl implements ModelService {
+public class ModelServiceImpl implements IModelService {
     @Autowired
-    private ModelRepository modelRepository;
+    private IModelRepository modelRepository;
 
     @Override
     public void deleteAllModels() {

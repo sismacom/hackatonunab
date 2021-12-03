@@ -1,16 +1,18 @@
 package com.ejemplo.tiendaalamano.model;
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "usuario")
 public class Usuario extends EntidadBase {
 
-    //private static final long serialVersionUID = -5773962493781143007L;
+    @OneToOne(mappedBy = "usuario")
+    private Cliente cliente;
 
+    //private static final long serialVersionUID = -5773962493781143007L;
     @Column(length = 25, nullable = false)
     private String username;
 
@@ -32,4 +34,13 @@ public class Usuario extends EntidadBase {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
 }
