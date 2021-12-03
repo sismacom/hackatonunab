@@ -1,7 +1,8 @@
-package com.ejemplo.demo;
+package com.ejemplo.tiendaalamano;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+
 
 @SpringBootTest
 class DemoApplicationTests {
