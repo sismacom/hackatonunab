@@ -6,6 +6,7 @@
 package com.ejemplo.tiendaalamano.repository;
 
 import com.ejemplo.tiendaalamano.model.Categoria;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -14,6 +15,6 @@ import org.springframework.stereotype.Repository;
  * @author SISMACOM
  */
 @Repository("categoriaRep")
-public interface ICategoriaRepository extends CrudRepository<Categoria, Long>{
+public interface ICategoriaRepository extends JpaRepository<Categoria, Long>{
     
 }
