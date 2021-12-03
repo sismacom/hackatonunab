@@ -29,7 +29,7 @@ public class TiendaALaManoApplication {
         protected void configure(HttpSecurity http) throws Exception {
             CorsConfiguration configuration = new CorsConfiguration();
             configuration.setAllowedHeaders(Arrays.asList("Authorization", "Cache-Control", "Content-Type"));
-            configuration.setAllowedOrigins(Arrays.asList("*"));
+            configuration.setAllowedOrigins(Arrays.asList("**"));
             configuration.setAllowedMethods(Arrays.asList("GET", "POST", "HEAD", "PUT", "DELETE"));
             configuration.setAllowCredentials(true);
             configuration.setExposedHeaders(Arrays.asList("Authorization"));

@@ -14,11 +14,12 @@ public class AuthController {
 
     @Autowired
     private JWTUtil jwtUtil;
-    
+
     @GetMapping
-	public ResponseEntity<?> createtoken(){
-    	String tokenJwt = jwtUtil.getJWTToken("texto ejemplo");
-        String resp = "{\"token\":\""+tokenJwt+"\"}";
+    public ResponseEntity<?> createtoken() {
+        String tokenJwt = jwtUtil.getJWTToken("texto ejemplo");
+        String resp = "{\"token\":\"" + tokenJwt + "\"}";
         return ResponseEntity.ok(resp);
-	}
+    }
+
 }

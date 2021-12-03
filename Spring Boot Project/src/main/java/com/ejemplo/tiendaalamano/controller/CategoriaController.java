@@ -33,7 +33,7 @@ public class CategoriaController {
     @PostMapping("/categoria/save")
     @ResponseStatus(HttpStatus.CREATED)
     public Categoria save(@RequestBody Categoria categoria) {
-        System.out.println("CATEGORIA: " + categoria.toString());
+        //System.out.println("CATEGORIA: " + categoria.toString());
         return catServ.save(categoria);
     }
 

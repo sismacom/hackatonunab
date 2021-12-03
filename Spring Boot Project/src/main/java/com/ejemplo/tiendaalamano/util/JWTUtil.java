@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 public class JWTUtil {
     
     public String getJWTToken(String keyword) {
-		String secretKey = "mySecretKey";
+		String secretKey = "012345";
 		List<GrantedAuthority> grantedAuthorities = AuthorityUtils
 				.commaSeparatedStringToAuthorityList("ROLE_USER");
 		
@@ -27,7 +27,7 @@ public class JWTUtil {
 								.map(GrantedAuthority::getAuthority)
 								.collect(Collectors.toList()))
 				.setIssuedAt(new Date(System.currentTimeMillis()))
-				.setExpiration(new Date(System.currentTimeMillis() + 600000))
+				//.setExpiration(new Date(System.currentTimeMillis() + 600000))
 				.signWith(SignatureAlgorithm.HS512,
 						secretKey.getBytes()).compact();
 
