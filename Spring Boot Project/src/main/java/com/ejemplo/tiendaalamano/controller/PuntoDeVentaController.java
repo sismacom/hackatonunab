@@ -48,8 +48,7 @@ public class PuntoDeVentaController {
 
     @DeleteMapping("/eliminar/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteById(Long id) {
-        System.out.println("ID: "+id+"/___");
+    public void deleteById(@PathVariable Long id) {
         puntoServ.deleteById(id);
     }
 
