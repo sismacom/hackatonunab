@@ -5,6 +5,7 @@
  */
 package com.ejemplo.tiendaalamano.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
@@ -25,6 +26,7 @@ public class PuntoDeVenta extends EntidadBase {
     private String coordenadas;
 
     @OneToMany(mappedBy = "puntoVenta")
+    @JsonIgnoreProperties(value = {"puntoVenta", "hibernateLazyInicializer", "handler"}, allowSetters = true)
     private List<Producto> productos;
 
     public String getCiudad() {

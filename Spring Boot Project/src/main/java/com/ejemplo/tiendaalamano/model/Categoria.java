@@ -5,6 +5,7 @@
  */
 package com.ejemplo.tiendaalamano.model;
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -48,6 +49,14 @@ public class Categoria extends EntidadBase {
 
     public void setProductos(List<Producto> productos) {
         this.productos = productos;
+    }
+
+    public void addProducto(Producto producto) {
+        if (productos == null) {
+            productos = new ArrayList<>();
+        }
+
+        productos.add(producto);
     }
 
     @Override

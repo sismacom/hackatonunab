@@ -5,8 +5,8 @@
  */
 package com.ejemplo.tiendaalamano.controller;
 
-import com.ejemplo.tiendaalamano.model.Categoria;
-import com.ejemplo.tiendaalamano.service.ICategoriaService;
+import com.ejemplo.tiendaalamano.model.PuntoDeVenta;
+import com.ejemplo.tiendaalamano.service.IPuntoDeVentaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,32 +24,33 @@ import org.springframework.web.bind.annotation.RestController;
  * @author SISMACOM
  */
 @RestController
-@RequestMapping("/api/categoria")
-public class CategoriaController {
+@RequestMapping("/api/puntoventa")
+public class PuntoDeVentaController {
 
     @Autowired
-    private ICategoriaService catServ;
+    private IPuntoDeVentaService puntoServ;
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Categoria save(@RequestBody Categoria categoria) {
-        return catServ.save(categoria);
+    public PuntoDeVenta save(@RequestBody PuntoDeVenta puntoventa) {
+        return puntoServ.save(puntoventa);
     }
 
     @GetMapping("/buscar/{id}")
-    public Categoria findByID(@PathVariable Long id) {
-        return catServ.findByID(id);
+    public PuntoDeVenta findById(@PathVariable Long id) {
+        return puntoServ.findByID(id);
     }
 
-    @GetMapping("/listartodas")
-    public List<Categoria> findAll() {
-        return catServ.findAll();
+    @GetMapping("/listartodos")
+    public List<PuntoDeVenta> findAll() {
+        return puntoServ.findAll();
     }
 
     @DeleteMapping("/eliminar/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteById(@PathVariable Long id) {
-        catServ.deleteById(id);
+    public void deleteById(Long id) {
+        System.out.println("ID: "+id+"/___");
+        puntoServ.deleteById(id);
     }
 
 }

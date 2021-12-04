@@ -5,6 +5,7 @@
  */
 package com.ejemplo.tiendaalamano.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -19,13 +20,14 @@ import javax.persistence.Table;
 @Table(name = "productos")
 public class Producto extends EntidadBase {
 
-    private int codigo;
+    //private int codigo;
     private String nombreProducto;
     private double valorProducto;
     private String descripcionProdcuto;
     private int cantidadStock;
 
     @ManyToOne
+    @JsonIgnoreProperties(value = {"productos", "hibernateLazyInicializer", "handler"}, allowSetters = true)
     private PuntoDeVenta puntoVenta;
 
     @ManyToOne
@@ -61,13 +63,13 @@ public class Producto extends EntidadBase {
         this.puntoVenta = puntoVenta;
     }
 
-    public int getCodigo() {
+    /*public int getCodigo() {
         return codigo;
     }
 
     public void setCodigo(int codigo) {
         this.codigo = codigo;
-    }
+    }*/
 
     public Marca getMarca() {
         return marca;
