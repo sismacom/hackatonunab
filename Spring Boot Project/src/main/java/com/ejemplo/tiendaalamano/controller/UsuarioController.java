@@ -5,8 +5,8 @@
  */
 package com.ejemplo.tiendaalamano.controller;
 
-import com.ejemplo.tiendaalamano.model.Categoria;
-import com.ejemplo.tiendaalamano.service.ICategoriaService;
+import com.ejemplo.tiendaalamano.model.Usuario;
+import com.ejemplo.tiendaalamano.service.IUsuarioService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,33 +24,33 @@ import org.springframework.web.bind.annotation.RestController;
  * @author SISMACOM
  */
 @RestController
-@RequestMapping("/api/categoria")
-public class CategoriaController {
+@RequestMapping("/api/usuario")
+public class UsuarioController {
 
     @Autowired
-    private ICategoriaService catServ;
+    private IUsuarioService catUsuario;
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Categoria save(@RequestBody Categoria categoria) {
-        return catServ.save(categoria);
+    public Usuario save(@RequestBody Usuario usuario) {
+        return catUsuario.save(usuario);
     }
 
     @GetMapping("/buscar/{id}")
-    public Categoria findByID(@PathVariable Long id) {
-        return catServ.findByID(id);
+    public Usuario findById(@PathVariable Long id) {
+        return catUsuario.findById(id).orElse(null);
     }
-
+    
     @GetMapping("/listartodas")
-    public List<Categoria> findAll() {
-        return catServ.findAll();
+    public List<Usuario> findAll() {
+        return catUsuario.findAll();
     }
 
     @DeleteMapping("/borrar/{id}")
     //@ResponseStatus(HttpStatus.OK)
     public String deleteById(@PathVariable Long id) {
         try{
-            catServ.deleteById(id);
+            catUsuario.deleteById(id);
             return "Eliminado con exito";
        }
        catch(Exception e){

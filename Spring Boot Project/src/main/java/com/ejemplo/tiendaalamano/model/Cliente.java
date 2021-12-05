@@ -22,6 +22,9 @@ public class Cliente extends EntidadBase {
     private String cedula;
     private String nombreCliente;
     private String telefono;
+    private boolean activo;
+
+    
 
     @OneToMany
     private List<RecomendacionProductos> productosRecomendados;
@@ -91,5 +94,19 @@ public class Cliente extends EntidadBase {
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
+    
+    public boolean isActivo() {
+        return activo;
+    }
 
+    public void setActivo(boolean activo) {
+        this.activo = activo;
+    }
+
+    @Override
+    public String toString() {
+        return nombreCliente;
+    }
+    
+    
 }

@@ -18,6 +18,17 @@ public class Usuario extends EntidadBase {
 
     @Column(length = 25, nullable = false)
     private String password;
+    
+    private String tipoUsuario;
+
+    public String getTipoUsuario() {
+        return tipoUsuario;
+    }
+
+    public void setTipoUsuario(String tipoUsuario) {
+        this.tipoUsuario = tipoUsuario;
+    }
+    
 
     public String getUsername() {
         return username;

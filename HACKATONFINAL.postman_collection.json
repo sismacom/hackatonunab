@@ -1,0 +1,614 @@
+{
+	"info": {
+		"_postman_id": "1901c029-c2a9-47ca-b20e-955c2688e9e1",
+		"name": "HACKATON",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Generacion de token",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoidGV4dG8gZWplbXBsbyIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2Mzg2NDMzNjd9.q23V_D6bdBY6mlC82voaAytMkJOW9dtb2Xk9chrImh5lqVYiGO8qMjnwWYMpa-TJ-GML10QjbVEMFHryKlLA6w",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tiendaalamano/api/auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tiendaalamano",
+						"api",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Categorias",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoidGV4dG8gZWplbXBsbyIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2Mzg3MjI0NTV9.oJU3XguleMS8x0F0m_Mt9EjSAUI_DG5kLiVt_nHoSHfjdh_j0ChkjM-hXw7gJxlTTKyXvFFOqafCyGjrDaBZqg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/tiendaalamano/api/categoria/listartodas?=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tiendaalamano",
+						"api",
+						"categoria",
+						"listartodas"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Marcas",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoidGV4dG8gZWplbXBsbyIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2Mzg3MjI0NTV9.oJU3XguleMS8x0F0m_Mt9EjSAUI_DG5kLiVt_nHoSHfjdh_j0ChkjM-hXw7gJxlTTKyXvFFOqafCyGjrDaBZqg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/tiendaalamano/api/marca/listartodas?=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tiendaalamano",
+						"api",
+						"marca",
+						"listartodas"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "62.Guardar Categorias",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoidGV4dG8gZWplbXBsbyIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2Mzg1NjU5Njh9.U0TmvoWteLu29P_WIGaZYDyf3Eh_LouqIz0uj3VJBSPLhalyPQw6HTcUkq6yteyzdlgM8fIqGcTnfrgRhDWEcQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"nombre_categoria\": \"MONITORES\",\r\n        \"descripcion\": \"AQUI VAN TODOS LOS MONITORES\"\r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tiendaalamano/api/categoria/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tiendaalamano",
+						"api",
+						"categoria",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "63.RegistrarMarca",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoidGV4dG8gZWplbXBsbyIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2Mzg1NjU5Njh9.U0TmvoWteLu29P_WIGaZYDyf3Eh_LouqIz0uj3VJBSPLhalyPQw6HTcUkq6yteyzdlgM8fIqGcTnfrgRhDWEcQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre_marca\":\"thermaltake\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tiendaalamano/api/marca/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tiendaalamano",
+						"api",
+						"marca",
+						"save"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "71.RegistrarPuntoVenta",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoidGV4dG8gZWplbXBsbyIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2Mzg1NjU5Njh9.U0TmvoWteLu29P_WIGaZYDyf3Eh_LouqIz0uj3VJBSPLhalyPQw6HTcUkq6yteyzdlgM8fIqGcTnfrgRhDWEcQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre_puntoventa\":\"Las casitas\",\r\n    \"direccion\":\"cra 18 #2563\",\r\n    \"telefono\":\"123456\",\r\n    \"ciudad\":\"valledupar\",\r\n    \"coordenadas\":\"1235:2565:100\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tiendaalamano/api/puntoventa/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tiendaalamano",
+						"api",
+						"puntoventa",
+						"save"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "69.RegistrarUsuario",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoidGV4dG8gZWplbXBsbyIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2Mzg1NjU5Njh9.U0TmvoWteLu29P_WIGaZYDyf3Eh_LouqIz0uj3VJBSPLhalyPQw6HTcUkq6yteyzdlgM8fIqGcTnfrgRhDWEcQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\":\"hackaton_matador\",\r\n    \"username\":\"poseto\",\r\n    \"tipoUsuario\":\"Administrador\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tiendaalamano/api/usuario/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tiendaalamano",
+						"api",
+						"usuario",
+						"save"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Guardar Marca",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoidGV4dG8gZWplbXBsbyIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2Mzg1NjU5Njh9.U0TmvoWteLu29P_WIGaZYDyf3Eh_LouqIz0uj3VJBSPLhalyPQw6HTcUkq6yteyzdlgM8fIqGcTnfrgRhDWEcQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre_puntoventa\":\"Las casitas\",\r\n    \"direccion\":\"cra 18 #2563\",\r\n    \"telefono\":\"123456\",\r\n    \"ciudad\":\"valledupar\",\r\n    \"coordenadas\":\"1235:2565:100\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tiendaalamano/api/puntoventa/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tiendaalamano",
+						"api",
+						"puntoventa",
+						"save"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Puntoventa",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoidGV4dG8gZWplbXBsbyIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2Mzg1NjU5Njh9.U0TmvoWteLu29P_WIGaZYDyf3Eh_LouqIz0uj3VJBSPLhalyPQw6HTcUkq6yteyzdlgM8fIqGcTnfrgRhDWEcQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre_puntoventa\":\"Las casitas\",\r\n    \"direccion\":\"cra 18 #2563\",\r\n    \"telefono\":\"123456\",\r\n    \"ciudad\":\"valledupar\",\r\n    \"coordenadas\":\"1235:2565:100\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tiendaalamano/api/puntoventa/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tiendaalamano",
+						"api",
+						"puntoventa",
+						"save"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Categoria",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoidGV4dG8gZWplbXBsbyIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2Mzg1NjU5Njh9.U0TmvoWteLu29P_WIGaZYDyf3Eh_LouqIz0uj3VJBSPLhalyPQw6HTcUkq6yteyzdlgM8fIqGcTnfrgRhDWEcQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre_puntoventa\":\"Las casitas\",\r\n    \"direccion\":\"cra 18 #2563\",\r\n    \"telefono\":\"123456\",\r\n    \"ciudad\":\"valledupar\",\r\n    \"coordenadas\":\"1235:2565:100\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tiendaalamano/api/categoria/eliminar/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tiendaalamano",
+						"api",
+						"categoria",
+						"eliminar",
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1. BuscarProductoNombre",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoidGV4dG8gZWplbXBsbyIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2Mzg3MjI0NTV9.oJU3XguleMS8x0F0m_Mt9EjSAUI_DG5kLiVt_nHoSHfjdh_j0ChkjM-hXw7gJxlTTKyXvFFOqafCyGjrDaBZqg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/tiendaalamano/api/producto/buscarnombre/mouse",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tiendaalamano",
+						"api",
+						"producto",
+						"buscarnombre",
+						"mouse"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1. BuscarProductoMarca",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoidGV4dG8gZWplbXBsbyIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2Mzg3MjI0NTV9.oJU3XguleMS8x0F0m_Mt9EjSAUI_DG5kLiVt_nHoSHfjdh_j0ChkjM-hXw7gJxlTTKyXvFFOqafCyGjrDaBZqg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/tiendaalamano/api/producto/buscarmarca/razer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tiendaalamano",
+						"api",
+						"producto",
+						"buscarmarca",
+						"razer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "66.EliminarMarca",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoidGV4dG8gZWplbXBsbyIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2Mzg3MjI0NTV9.oJU3XguleMS8x0F0m_Mt9EjSAUI_DG5kLiVt_nHoSHfjdh_j0ChkjM-hXw7gJxlTTKyXvFFOqafCyGjrDaBZqg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre_puntoventa\":\"Las casitas\",\r\n    \"direccion\":\"cra 18 #2563\",\r\n    \"telefono\":\"123456\",\r\n    \"ciudad\":\"valledupar\",\r\n    \"coordenadas\":\"1235:2565:100\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tiendaalamano/api/marca/borrar/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tiendaalamano",
+						"api",
+						"marca",
+						"borrar",
+						"4"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "67.EliminarProducto",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoidGV4dG8gZWplbXBsbyIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2Mzg3MjI0NTV9.oJU3XguleMS8x0F0m_Mt9EjSAUI_DG5kLiVt_nHoSHfjdh_j0ChkjM-hXw7gJxlTTKyXvFFOqafCyGjrDaBZqg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre_puntoventa\":\"Las casitas\",\r\n    \"direccion\":\"cra 18 #2563\",\r\n    \"telefono\":\"123456\",\r\n    \"ciudad\":\"valledupar\",\r\n    \"coordenadas\":\"1235:2565:100\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tiendaalamano/api/marca/borrar/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tiendaalamano",
+						"api",
+						"marca",
+						"borrar",
+						"4"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "65.EliminarCategoria",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoidGV4dG8gZWplbXBsbyIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2Mzg3MjI0NTV9.oJU3XguleMS8x0F0m_Mt9EjSAUI_DG5kLiVt_nHoSHfjdh_j0ChkjM-hXw7gJxlTTKyXvFFOqafCyGjrDaBZqg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre_puntoventa\":\"Las casitas\",\r\n    \"direccion\":\"cra 18 #2563\",\r\n    \"telefono\":\"123456\",\r\n    \"ciudad\":\"valledupar\",\r\n    \"coordenadas\":\"1235:2565:100\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tiendaalamano/api/categoria/borrar/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tiendaalamano",
+						"api",
+						"categoria",
+						"borrar",
+						"2"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

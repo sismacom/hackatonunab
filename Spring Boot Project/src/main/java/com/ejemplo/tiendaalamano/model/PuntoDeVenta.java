@@ -25,9 +25,9 @@ public class PuntoDeVenta extends EntidadBase {
     private String ciudad;
     private String coordenadas;
 
-    @OneToMany(mappedBy = "puntoVenta")
+    /*@OneToMany(mappedBy = "puntoVenta")
     @JsonIgnoreProperties(value = {"puntoVenta", "hibernateLazyInicializer", "handler"}, allowSetters = true)
-    private List<Producto> productos;
+    private List<Producto> productos;*/
 
     public String getCiudad() {
         return ciudad;
@@ -69,13 +69,13 @@ public class PuntoDeVenta extends EntidadBase {
         this.telefono = telefono;
     }
 
-    public List<Producto> getProductos() {
+  /*  public List<Producto> getProductos() {
         return productos;
     }
 
     public void setProductos(List<Producto> productos) {
         this.productos = productos;
-    }
+    }*/
 
     @Override
     public String toString() {

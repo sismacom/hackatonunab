@@ -5,12 +5,7 @@
  */
 package com.ejemplo.tiendaalamano.model;
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -24,8 +19,9 @@ public class Categoria extends EntidadBase {
     private String nombre_categoria;
     private String descripcion;
 
+   /* @JsonIgnoreProperties(value = {"categoria", "hibernateLazyInitializer", "handler"}, allowSetters = true)
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "categoria")
-    private List<Producto> productos;
+    private List<Producto> productos;*/
 
     public String getNombre_categoria() {
         return nombre_categoria;
@@ -43,7 +39,7 @@ public class Categoria extends EntidadBase {
         this.descripcion = descripcion;
     }
 
-    public List<Producto> getProductos() {
+    /*public List<Producto> getProductos() {
         return productos;
     }
 
@@ -57,7 +53,7 @@ public class Categoria extends EntidadBase {
         }
 
         productos.add(producto);
-    }
+    }*/
 
     @Override
     public String toString() {

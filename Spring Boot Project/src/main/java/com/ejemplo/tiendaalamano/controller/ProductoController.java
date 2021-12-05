@@ -5,8 +5,8 @@
  */
 package com.ejemplo.tiendaalamano.controller;
 
-import com.ejemplo.tiendaalamano.model.Categoria;
-import com.ejemplo.tiendaalamano.service.ICategoriaService;
+import com.ejemplo.tiendaalamano.model.Producto;
+import com.ejemplo.tiendaalamano.service.IProductoService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,33 +24,43 @@ import org.springframework.web.bind.annotation.RestController;
  * @author SISMACOM
  */
 @RestController
-@RequestMapping("/api/categoria")
-public class CategoriaController {
+@RequestMapping("/api/producto")
+public class ProductoController {
 
     @Autowired
-    private ICategoriaService catServ;
-
-    @PostMapping("/save")
-    @ResponseStatus(HttpStatus.CREATED)
-    public Categoria save(@RequestBody Categoria categoria) {
-        return catServ.save(categoria);
-    }
+    private IProductoService productoServ;
 
     @GetMapping("/buscar/{id}")
-    public Categoria findByID(@PathVariable Long id) {
-        return catServ.findByID(id);
+    public Producto findById(@PathVariable Long id) {
+        return productoServ.findById(id);
+    }
+    
+    @GetMapping("/buscarnombre/{nombre}")
+    public List<Producto> buscarPorNombre(@PathVariable String nombre) {
+        return productoServ.buscarPorNombre(nombre);
+    }
+    
+    @GetMapping("/buscarmarca/{marca}")
+    public List<Producto> buscarPorMarca(@PathVariable String marca) {
+        return productoServ.buscarPorMarca(marca);
     }
 
     @GetMapping("/listartodas")
-    public List<Categoria> findAll() {
-        return catServ.findAll();
+    public List<Producto> findAll() {
+        return productoServ.findAll();
+    }
+
+    @PostMapping("/save")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Producto save(@RequestBody Producto producto) {
+        return productoServ.save(producto);
     }
 
     @DeleteMapping("/borrar/{id}")
-    //@ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public String deleteById(@PathVariable Long id) {
         try{
-            catServ.deleteById(id);
+            productoServ.deleteById(id);
             return "Eliminado con exito";
        }
        catch(Exception e){

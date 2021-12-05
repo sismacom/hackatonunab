@@ -46,10 +46,16 @@ public class MarcaController {
         return marcaServ.save(marca);
     }
 
-    @DeleteMapping("/borrar")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteById(@PathVariable Long Id) {
-        marcaServ.deleteById(Id);
+    @DeleteMapping("/borrar/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public String deleteById(@PathVariable Long id) {
+        try{
+            marcaServ.deleteById(id);
+            return "Eliminado con exito";
+       }
+       catch(Exception e){
+           return "Error al eliminar ID no encontrado";
+       }
     }
 
 }

@@ -27,25 +27,27 @@ public class Producto extends EntidadBase {
     private int cantidadStock;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = {"productos", "hibernateLazyInicializer", "handler"}, allowSetters = true)
+    //@JsonIgnoreProperties(value = {"productos", "hibernateLazyInicializer", "handler"}, allowSetters = true)
     private PuntoDeVenta puntoVenta;
 
+    //@JsonIgnoreProperties(value = {"marca", "hibernateLazyInitializer", "handler"}, allowSetters = true)
     @ManyToOne
     private Marca marca;
 
+    //@JsonIgnoreProperties(value = {"categoria", "hibernateLazyInitializer", "handler"}, allowSetters = true)
     @ManyToOne
     private Categoria categoria;
 
-    @OneToMany(mappedBy = "producto")
-    private List<ComentarioProducto> comentarioProductos;
+    /*@OneToMany(mappedBy = "producto")
+    private List<ComentarioProducto> comentarioProductos;*/
 
-    public List<ComentarioProducto> getComentarioProductos() {
+  /*  public List<ComentarioProducto> getComentarioProductos() {
         return comentarioProductos;
     }
 
     public void setComentarioProductos(List<ComentarioProducto> comentarioProductos) {
         this.comentarioProductos = comentarioProductos;
-    }
+    }*/
 
     public int getCantidadStock() {
         return cantidadStock;

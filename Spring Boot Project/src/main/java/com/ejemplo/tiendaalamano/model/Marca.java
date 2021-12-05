@@ -5,11 +5,7 @@
  */
 package com.ejemplo.tiendaalamano.model;
 
-import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -22,8 +18,9 @@ public class Marca extends EntidadBase {
 
     private String nombre_marca;
     
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "categoria")
-    private List<Producto> productos;
+    /*@JsonIgnoreProperties(value = {"marca", "hibernateLazyInitializer", "handler"}, allowSetters = true)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "marca")
+    private List<Producto> productos;*/
 
     public String getNombre_marca() {
         return nombre_marca;
@@ -33,13 +30,13 @@ public class Marca extends EntidadBase {
         this.nombre_marca = nombre_marca;
     }
 
-    public List<Producto> getProductos() {
+   /* public List<Producto> getProductos() {
         return productos;
     }
 
     public void setProductos(List<Producto> productos) {
         this.productos = productos;
-    }
+    }*/
 
     @Override
     public String toString() {
